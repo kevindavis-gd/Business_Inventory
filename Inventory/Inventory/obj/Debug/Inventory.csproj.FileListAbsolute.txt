@@ -12,3 +12,4 @@ C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\bin\Debug
 C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\bin\Debug\LoginPswdUserControl.pdb
 C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Debug\Inventory.csproj.CopyComplete
 C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Debug\Inventory.InventoryView.resources
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Debug\Inventory.Form_InsertItem.resources

@@ -49,9 +49,9 @@ namespace Inventory
             inventoryItems.Add(item);
         }
 
-        public void InputFromFile()
+        public void ImportFromFile()
         {
-            MessageBox.Show("Select Business File");
+            //MessageBox.Show("Select Business File");
             OpenFileDialog fileChooser = new OpenFileDialog();
             fileChooser.Filter = "Text |* .txt";
             if (fileChooser.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -66,11 +66,33 @@ namespace Inventory
                 {
                     AddItem(new Item( file.ReadLine(), int.Parse(file.ReadLine()), Double.Parse(file.ReadLine())));
                 }
+
+                file.Close();
             }//if
             else
             {
                 MessageBox.Show("ERROR LOADING QUESTIONS", "ERROR");
             }//else
+        }
+
+        public void OutputToFile()
+        {
+            SaveFileDialog outfile = new SaveFileDialog();
+            if (outfile.ShowDialog() == DialogResult.OK)
+            {
+                using (Stream s = File.Open(outfile.FileName, FileMode.CreateNew))
+                using (StreamWriter output = new StreamWriter(s))
+                {
+                    output.WriteLine(NameOfBusiness);
+                    output.WriteLine(NameOfOwner);
+                    foreach(var item in inventoryItems)
+                    {
+                        output.WriteLine(item.Name);
+                        output.WriteLine(item.Count);
+                        output.WriteLine(item.Cost);
+                    }
+                }
+            }
         }
 
         public Item GetItemInfo(int index)
@@ -88,6 +110,11 @@ namespace Inventory
 
             return temp;
         }
-       
+
+        public void AddNewItem(string nam, int cou, double cos)
+        {
+            Item temp = new Item(nam,cou,cos);
+            inventoryItems.Add(temp);
+        }
     }
 }

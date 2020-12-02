@@ -12,6 +12,8 @@ namespace Inventory
 {
     public partial class InventoryView : Form
     {
+        BusinessEntity hardware = new BusinessEntity();
+
         public InventoryView()
         {
             InitializeComponent();
@@ -19,13 +21,42 @@ namespace Inventory
 
         private void InventoryView_Load(object sender, EventArgs e)
         {
+            hardware.ImportFromFile();
+            label_CompanyName.Text = hardware.NameOfBusiness;
+            LoadList();
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            hardware.OutputToFile();
+        }
+
+        private void InsertItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_InsertItem insert = new Form_InsertItem();
+            try
+            {
+                
+                if (insert.ShowDialog(this) == DialogResult.OK)
+                {
+                    hardware.AddNewItem(insert.GetName, insert.GetCount, insert.GetCost);
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Incorrect Format, Please Try again");
+            }
+            insert.Dispose();
+            LoadList();
+        }
+
+        private void LoadList()
+        {
             string format = "{0,-20}{1,20}{2,20}";
             string format2 = "{0,-20}{1,20}{2,20:C}";
-            BusinessEntity hardware = new BusinessEntity();
-            hardware.InputFromFile();
 
-            label_CompanyName.Text = hardware.NameOfBusiness;
-            listBox_Items.Items.Add(String.Format(format,"Name","Number Left","Cost"));
+            listBox_Items.Items.Clear();
+            listBox_Items.Items.Add(String.Format(format, "Name", "Number Left", "Cost"));
 
             Item temp = new Item();
             for (int x = 0; x < hardware.NumberOfItems; x++)
@@ -33,8 +64,6 @@ namespace Inventory
                 temp = hardware.GetItemInfo(x);
                 listBox_Items.Items.Add(String.Format(format2, temp.Name, temp.Count, temp.Cost));
             }
-
-            
         }
     }
 }

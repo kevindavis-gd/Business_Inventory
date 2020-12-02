@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessEntity.cs" />
+    <Compile Include="InsertItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertItemForm.Designer.cs">
+      <DependentUpon>InsertItemForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InventoryView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="InsertItemForm.resx">
+      <DependentUpon>InsertItemForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InventoryView.resx">
       <DependentUpon>InventoryView.cs</DependentUpon>
     </EmbeddedResource>
