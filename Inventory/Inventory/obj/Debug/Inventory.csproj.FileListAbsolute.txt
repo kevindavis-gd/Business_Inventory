@@ -1,0 +1,14 @@
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\bin\Debug\Inventory.exe.config
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\bin\Debug\Inventory.exe
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\bin\Debug\Inventory.pdb
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Debug\Inventory.csprojAssemblyReference.cache
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Debug\Inventory.MainForm.resources
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Debug\Inventory.Properties.Resources.resources
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Debug\Inventory.csproj.GenerateResource.cache
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Debug\Inventory.csproj.CoreCompileInputs.cache
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Debug\Inventory.exe
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Debug\Inventory.pdb
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\bin\Debug\LoginPswdUserControl.dll
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\bin\Debug\LoginPswdUserControl.pdb
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Debug\Inventory.csproj.CopyComplete
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Debug\Inventory.InventoryView.resources

@@ -1,0 +1,7 @@
+C:\Users\shylo\Documents\GitHub\Business_Inventory\LoginPswdUserControl\LoginPswdUserControl\bin\Release\LoginPswdUserControl.dll
+C:\Users\shylo\Documents\GitHub\Business_Inventory\LoginPswdUserControl\LoginPswdUserControl\bin\Release\LoginPswdUserControl.pdb
+C:\Users\shylo\Documents\GitHub\Business_Inventory\LoginPswdUserControl\LoginPswdUserControl\obj\Release\LoginPswdUserControl.LoginPswdUserControl.resources
+C:\Users\shylo\Documents\GitHub\Business_Inventory\LoginPswdUserControl\LoginPswdUserControl\obj\Release\LoginPswdUserControl.csproj.GenerateResource.cache
+C:\Users\shylo\Documents\GitHub\Business_Inventory\LoginPswdUserControl\LoginPswdUserControl\obj\Release\LoginPswdUserControl.csproj.CoreCompileInputs.cache
+C:\Users\shylo\Documents\GitHub\Business_Inventory\LoginPswdUserControl\LoginPswdUserControl\obj\Release\LoginPswdUserControl.dll
+C:\Users\shylo\Documents\GitHub\Business_Inventory\LoginPswdUserControl\LoginPswdUserControl\obj\Release\LoginPswdUserControl.pdb
