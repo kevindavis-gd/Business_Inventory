@@ -35,15 +35,6 @@ namespace Inventory
             set { nameOfOwner = value; }
         }
 
-        
-        /*
-        public List<Item> InventoryItems
-        {
-            get { return inventoryItems; }
-            set { inventoryItems = value; }
-        }
-        */
-
         public void AddItem(Item item)
         {
             inventoryItems.Add(item);
