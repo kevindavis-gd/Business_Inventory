@@ -35,10 +35,7 @@ namespace Inventory
             set { nameOfOwner = value; }
         }
 
-        public void AddItem(Item item)
-        {
-            inventoryItems.Add(item);
-        }
+       
 
         public void ImportFromFile()
         {
@@ -57,7 +54,8 @@ namespace Inventory
 
                     while (!file.EndOfStream)
                     {
-                        AddItem(new Item(file.ReadLine(), file.ReadLine(), int.Parse(file.ReadLine()), Double.Parse(file.ReadLine())));
+                        //AddItem(new Item(file.ReadLine().Substring(0, 4), file.ReadLine(), int.Parse(file.ReadLine()), Double.Parse(file.ReadLine())));
+                        AddNewItem(file.ReadLine().Substring(0, 4), file.ReadLine(), int.Parse(file.ReadLine()), Double.Parse(file.ReadLine()));
                     }
                     file.Close();
                 }
@@ -65,8 +63,7 @@ namespace Inventory
                 {
                     MessageBox.Show("ERROR LOADING FILES ", "ERROR");
                 }
-            }//if
-            
+            }//if 
         }
 
         public void OutputToFile()
@@ -74,13 +71,14 @@ namespace Inventory
             SaveFileDialog outfile = new SaveFileDialog();
             if (outfile.ShowDialog() == DialogResult.OK)
             {
-                using (Stream s = File.Open(outfile.FileName, FileMode.CreateNew))
+                using (Stream s = File.Open(outfile.FileName, FileMode.Create))
                 using (StreamWriter output = new StreamWriter(s))
                 {
                     output.WriteLine(NameOfBusiness);
                     output.WriteLine(NameOfOwner);
                     foreach(var item in inventoryItems)
                     {
+                        output.WriteLine(item.ID);
                         output.WriteLine(item.Name);
                         output.WriteLine(item.Count);
                         output.WriteLine(item.Cost);
@@ -107,8 +105,48 @@ namespace Inventory
 
         public void AddNewItem(string id, string nam, int cou, double cos)
         {
+            foreach (Item item in inventoryItems)
+            {
+                if (item.ID.ToLower() == id.ToLower())
+                {
+                    MessageBox.Show("Item ID " + id + " Already Exists");
+                    return;
+                }
+            }
             Item temp = new Item(id,nam,cou,cos);
             inventoryItems.Add(temp);
         }
+
+
+        public void DeleteItem(string DeleteMe)
+        {
+            
+            for (int x = 0; x < inventoryItems.Count; x++)
+            {
+                //MessageBox.Show(inventoryItems[x].ID);
+                if (inventoryItems[x].ID == DeleteMe)
+                {
+                    inventoryItems.RemoveAt(x);
+                    return;
+                }
+            }
+            MessageBox.Show("Item Does Not Exists");
+        }
+
+        public void Update(string id, string name, int count, double cost)
+        {
+            for (int x = 0; x < inventoryItems.Count; x++)
+            {
+                if (inventoryItems[x].ID == id)
+                {
+                    inventoryItems[x].Name = name;
+                    inventoryItems[x].Count = count;
+                    inventoryItems[x].Cost = cost;
+                    return;
+                }
+            }
+        }
     }
+
+   
 }

@@ -18,25 +18,21 @@ namespace Inventory
         {
             InitializeComponent();
         }
-
         private void InventoryView_Load(object sender, EventArgs e)
         {
             hardware.ImportFromFile();
             label_CompanyName.Text = hardware.NameOfBusiness;
             LoadList();
         }
-
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        public void SaveText()
         {
             hardware.OutputToFile();
         }
-
-        private void InsertItemToolStripMenuItem_Click(object sender, EventArgs e)
+        public void Insert()
         {
             Form_InsertItem insert = new Form_InsertItem();
             try
             {
-                
                 if (insert.ShowDialog(this) == DialogResult.OK)
                 {
                     hardware.AddNewItem(insert.GetID, insert.GetName, insert.GetCount, insert.GetCost);
@@ -49,7 +45,6 @@ namespace Inventory
             insert.Dispose();
             LoadList();
         }
-
         private void LoadList()
         {
             string format = "{0,-10}{1,-10}{2,-20}{3,-10}";
@@ -65,5 +60,31 @@ namespace Inventory
                 listBox_Items.Items.Add(String.Format(format2,temp.ID, temp.Name, temp.Count, temp.Cost));
             }
         }
+
+        public void Delete()
+        {
+            String str = listBox_Items.SelectedItem.ToString().Substring(0, 4);
+            hardware.DeleteItem(str);
+            LoadList();
+        }
+
+        public void ItemUpdate()
+        {
+            UpdateForm insert = new UpdateForm();
+            try
+            {
+                if (insert.ShowDialog(this) == DialogResult.OK && insert.Getblank == false)
+                {
+                    hardware.Update(listBox_Items.SelectedItem.ToString().Substring(0, 4), insert.GetName, insert.GetCount, insert.GetCost);
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Incorrect Format, Please Try again");
+            }
+            insert.Dispose();
+            LoadList();
+        }
     }
+
 }

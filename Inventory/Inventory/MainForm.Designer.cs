@@ -40,6 +40,10 @@
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginPswdUserControl1 = new LoginPswdUserControl.LoginPswdUserControl();
+            this.saveAsTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveSerializedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openPlainTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openSerializedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,16 +76,22 @@
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
+            this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openPlainTextToolStripMenuItem,
+            this.openSerializedToolStripMenuItem});
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.openToolStripMenuItem.Text = "Open";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
+            this.saveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveAsTextToolStripMenuItem,
+            this.saveSerializedToolStripMenuItem});
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.saveToolStripMenuItem.Text = "Save";
@@ -91,6 +101,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -114,12 +125,14 @@
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
             this.updateToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.updateToolStripMenuItem.Text = "Update";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -134,6 +147,32 @@
             this.loginPswdUserControl1.Size = new System.Drawing.Size(365, 196);
             this.loginPswdUserControl1.TabIndex = 3;
             this.loginPswdUserControl1.LoginButtonClicked += new System.EventHandler(this.loginPswdUserControl1_LoginButtonClicked);
+            // 
+            // saveAsTextToolStripMenuItem
+            // 
+            this.saveAsTextToolStripMenuItem.Name = "saveAsTextToolStripMenuItem";
+            this.saveAsTextToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saveAsTextToolStripMenuItem.Text = "Save As Text";
+            this.saveAsTextToolStripMenuItem.Click += new System.EventHandler(this.saveAsTextToolStripMenuItem_Click);
+            // 
+            // saveSerializedToolStripMenuItem
+            // 
+            this.saveSerializedToolStripMenuItem.Name = "saveSerializedToolStripMenuItem";
+            this.saveSerializedToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saveSerializedToolStripMenuItem.Text = "Save Serialized";
+            // 
+            // openPlainTextToolStripMenuItem
+            // 
+            this.openPlainTextToolStripMenuItem.Name = "openPlainTextToolStripMenuItem";
+            this.openPlainTextToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.openPlainTextToolStripMenuItem.Text = "Open Plain Text";
+            this.openPlainTextToolStripMenuItem.Click += new System.EventHandler(this.openPlainTextToolStripMenuItem_Click);
+            // 
+            // openSerializedToolStripMenuItem
+            // 
+            this.openSerializedToolStripMenuItem.Name = "openSerializedToolStripMenuItem";
+            this.openSerializedToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.openSerializedToolStripMenuItem.Text = "Open Serialized";
             // 
             // MainForm
             // 
@@ -167,6 +206,10 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private LoginPswdUserControl.LoginPswdUserControl loginPswdUserControl1;
+        private System.Windows.Forms.ToolStripMenuItem saveAsTextToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveSerializedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openPlainTextToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openSerializedToolStripMenuItem;
     }
 }
 

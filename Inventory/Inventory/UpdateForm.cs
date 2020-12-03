@@ -10,20 +10,19 @@ using System.Windows.Forms;
 
 namespace Inventory
 {
-    public partial class Form_InsertItem : Form
+   
+
+    public partial class UpdateForm : Form
     {
         private string name;
         private int count;
         private double cost;
+        private bool blank;
 
-        private string id;
-
-        public string GetID
+        public bool Getblank
         {
-            get { return id; }
-            set { id = value; }
+            get { return blank; }
         }
-
         public string GetName
         {
             get { return name; }
@@ -42,17 +41,24 @@ namespace Inventory
             set { cost = value; }
         }
 
-        public Form_InsertItem()
+        public UpdateForm()
         {
             InitializeComponent();
         }
 
-        private void button_ok_Click(object sender, EventArgs e)
+        private void button_OK_Click(object sender, EventArgs e)
         {
-            id = textBox_ItemID.Text.Substring(0, 4);
-            name = textBox_ItemName.Text;
-            count = int.Parse(textBox_ItemCount.Text);
-            cost = double.Parse(textBox_ItemCost.Text);
+            if(textBox_ItemName.Text == "" || textBox_ItemCount.Text== "" || textBox_ItemCost.Text =="")
+            {
+                MessageBox.Show("Field Cannot be Left Blank");
+                blank = true;
+            }
+            else
+            {
+                name = textBox_ItemName.Text;
+                count = int.Parse(textBox_ItemCount.Text);
+                cost = double.Parse(textBox_ItemCost.Text);
+            }
         }
     }
 }

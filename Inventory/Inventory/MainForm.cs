@@ -32,18 +32,50 @@ namespace Inventory
             }
         }
 
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        private void insertToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InventoryView activeStore = (InventoryView)this.ActiveMdiChild;
+            activeStore.Insert();
+        }
+
+        private void saveAsTextToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InventoryView activeStore = (InventoryView)this.ActiveMdiChild;
+            activeStore.SaveText();
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InventoryView activeStore = (InventoryView)this.ActiveMdiChild;
+            activeStore.Delete();
+        }
+
+        private void openPlainTextToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewChild();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //NewChild();
+        }
+
+        private void NewChild()
         {
             InventoryView child = new InventoryView();
             child.MdiParent = this;
             child.Show();
         }
 
-        private void insertToolStripMenuItem_Click(object sender, EventArgs e)
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InventoryView activeStore = (InventoryView)this.ActiveMdiChild;
-            //activeStore.
-
+            activeStore.ItemUpdate();
         }
     }
 }
