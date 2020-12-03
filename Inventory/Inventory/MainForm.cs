@@ -38,5 +38,12 @@ namespace Inventory
             child.MdiParent = this;
             child.Show();
         }
+
+        private void insertToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InventoryView activeStore = (InventoryView)this.ActiveMdiChild;
+            //activeStore.
+
+        }
     }
 }
