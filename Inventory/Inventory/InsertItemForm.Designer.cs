@@ -36,12 +36,14 @@
             this.textBox_ItemCost = new System.Windows.Forms.TextBox();
             this.button_ok = new System.Windows.Forms.Button();
             this.button_Cancel = new System.Windows.Forms.Button();
+            this.label_ItemId = new System.Windows.Forms.Label();
+            this.textBox_ItemID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label_ItemName
             // 
             this.label_ItemName.AutoSize = true;
-            this.label_ItemName.Location = new System.Drawing.Point(41, 25);
+            this.label_ItemName.Location = new System.Drawing.Point(34, 24);
             this.label_ItemName.Name = "label_ItemName";
             this.label_ItemName.Size = new System.Drawing.Size(75, 17);
             this.label_ItemName.TabIndex = 0;
@@ -50,7 +52,7 @@
             // label_ItemCount
             // 
             this.label_ItemCount.AutoSize = true;
-            this.label_ItemCount.Location = new System.Drawing.Point(5, 56);
+            this.label_ItemCount.Location = new System.Drawing.Point(-2, 56);
             this.label_ItemCount.Name = "label_ItemCount";
             this.label_ItemCount.Size = new System.Drawing.Size(111, 17);
             this.label_ItemCount.TabIndex = 1;
@@ -59,7 +61,7 @@
             // label_ItemCost
             // 
             this.label_ItemCost.AutoSize = true;
-            this.label_ItemCost.Location = new System.Drawing.Point(34, 88);
+            this.label_ItemCost.Location = new System.Drawing.Point(27, 89);
             this.label_ItemCost.Name = "label_ItemCost";
             this.label_ItemCost.Size = new System.Drawing.Size(82, 17);
             this.label_ItemCost.TabIndex = 2;
@@ -67,21 +69,21 @@
             // 
             // textBox_ItemName
             // 
-            this.textBox_ItemName.Location = new System.Drawing.Point(122, 22);
+            this.textBox_ItemName.Location = new System.Drawing.Point(122, 24);
             this.textBox_ItemName.Name = "textBox_ItemName";
             this.textBox_ItemName.Size = new System.Drawing.Size(100, 22);
             this.textBox_ItemName.TabIndex = 3;
             // 
             // textBox_ItemCount
             // 
-            this.textBox_ItemCount.Location = new System.Drawing.Point(122, 53);
+            this.textBox_ItemCount.Location = new System.Drawing.Point(122, 56);
             this.textBox_ItemCount.Name = "textBox_ItemCount";
             this.textBox_ItemCount.Size = new System.Drawing.Size(100, 22);
             this.textBox_ItemCount.TabIndex = 4;
             // 
             // textBox_ItemCost
             // 
-            this.textBox_ItemCost.Location = new System.Drawing.Point(122, 88);
+            this.textBox_ItemCost.Location = new System.Drawing.Point(122, 89);
             this.textBox_ItemCost.Name = "textBox_ItemCost";
             this.textBox_ItemCost.Size = new System.Drawing.Size(100, 22);
             this.textBox_ItemCost.TabIndex = 5;
@@ -89,7 +91,7 @@
             // button_ok
             // 
             this.button_ok.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button_ok.Location = new System.Drawing.Point(147, 123);
+            this.button_ok.Location = new System.Drawing.Point(147, 150);
             this.button_ok.Name = "button_ok";
             this.button_ok.Size = new System.Drawing.Size(75, 23);
             this.button_ok.TabIndex = 6;
@@ -100,18 +102,36 @@
             // button_Cancel
             // 
             this.button_Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button_Cancel.Location = new System.Drawing.Point(56, 123);
+            this.button_Cancel.Location = new System.Drawing.Point(53, 150);
             this.button_Cancel.Name = "button_Cancel";
             this.button_Cancel.Size = new System.Drawing.Size(75, 23);
             this.button_Cancel.TabIndex = 7;
             this.button_Cancel.Text = "Cancel";
             this.button_Cancel.UseVisualStyleBackColor = true;
             // 
+            // label_ItemId
+            // 
+            this.label_ItemId.AutoSize = true;
+            this.label_ItemId.Location = new System.Drawing.Point(50, 122);
+            this.label_ItemId.Name = "label_ItemId";
+            this.label_ItemId.Size = new System.Drawing.Size(51, 17);
+            this.label_ItemId.TabIndex = 8;
+            this.label_ItemId.Text = "Item ID";
+            // 
+            // textBox_ItemID
+            // 
+            this.textBox_ItemID.Location = new System.Drawing.Point(122, 122);
+            this.textBox_ItemID.Name = "textBox_ItemID";
+            this.textBox_ItemID.Size = new System.Drawing.Size(100, 22);
+            this.textBox_ItemID.TabIndex = 9;
+            // 
             // Form_InsertItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(250, 158);
+            this.ClientSize = new System.Drawing.Size(250, 185);
+            this.Controls.Add(this.textBox_ItemID);
+            this.Controls.Add(this.label_ItemId);
             this.Controls.Add(this.button_Cancel);
             this.Controls.Add(this.button_ok);
             this.Controls.Add(this.textBox_ItemCost);
@@ -137,5 +157,7 @@
         private System.Windows.Forms.TextBox textBox_ItemCost;
         private System.Windows.Forms.Button button_ok;
         private System.Windows.Forms.Button button_Cancel;
+        private System.Windows.Forms.Label label_ItemId;
+        private System.Windows.Forms.TextBox textBox_ItemID;
     }
 }

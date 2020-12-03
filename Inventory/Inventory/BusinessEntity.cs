@@ -60,11 +60,10 @@ namespace Inventory
 
                 StreamReader file = new StreamReader(fileChooser.FileName);
                 NameOfBusiness = file.ReadLine();
-                NameOfOwner = file.ReadLine();
 
                 while (!file.EndOfStream)
                 {
-                    AddItem(new Item( file.ReadLine(), int.Parse(file.ReadLine()), Double.Parse(file.ReadLine())));
+                    AddItem(new Item(file.ReadLine(), int.Parse(file.ReadLine()), Double.Parse(file.ReadLine())));
                 }
 
                 file.Close();
@@ -111,10 +110,34 @@ namespace Inventory
             return temp;
         }
 
-        public void AddNewItem(string nam, int cou, double cos)
+        public void AddNewItem(string id, string nam, int cou, double cos)
         {
+            foreach(Item item in inventoryItems)
+            {
+                if (item.Name.ToLower() == nam.ToLower())
+                {
+                    MessageBox.Show("Item Already Exists");
+                    return;
+                }
+            }
+
             Item temp = new Item(nam,cou,cos);
             inventoryItems.Add(temp);
+        }
+
+        public void DeleteItem(string DeleteMe)
+        {
+
+            for (int x=0; x < inventoryItems.Count; x++)
+            {
+                if (inventoryItems[x].Name == DeleteMe)
+                {
+                    inventoryItems.RemoveAt(x);
+                    return;
+                }
+            }
+
+            MessageBox.Show("Item Does Not Exists");
         }
     }
 }

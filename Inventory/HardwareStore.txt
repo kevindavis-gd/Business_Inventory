@@ -1,17 +1,5 @@
 Machine Shop
 Kevin Davis
-Hammer
-25
-19.75
-Saw
-30
-17.28
-Nail
-30
-0.15
-Gloves
-10
-12.95
-Light Bulbs
-15
-6.75
+jkjv
+21
+12.2

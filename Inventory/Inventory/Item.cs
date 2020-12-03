@@ -11,6 +11,14 @@ namespace Inventory
         private double cost;
         private int count;
         private string name;
+        private string id;
+
+        public string ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
 
         public int Count
         {
@@ -32,27 +40,28 @@ namespace Inventory
 
         public Item()
         {
+            id = "";
             name = "";
             count = 0;
             cost = 0;
         }
         public Item(string nam, int cou, double cos)
         {
+            //id = i;
             name = nam;
             count = cou;
             cost = cos;
-            
         }
 
         public Item Copy ()
         {
             Item copy = new Item();
+            copy.ID = ID;
             copy.Name = Name;
             copy.Count = Count;
             copy.Cost = Cost;
 
             return copy;
- 
         }
     }
 }

@@ -15,7 +15,13 @@ namespace Inventory
         private string name;
         private int count;
         private double cost;
+        private string id;
 
+        public string GetID
+        {
+            get { return id; }
+            set { id = value; }
+        }
         public string GetName
         {
             get { return name; }
@@ -41,9 +47,10 @@ namespace Inventory
 
         private void button_ok_Click(object sender, EventArgs e)
         {
-                name = textBox_ItemName.Text;
-                count = int.Parse(textBox_ItemCount.Text);
-                cost = double.Parse(textBox_ItemCost.Text);
+            name = textBox_ItemName.Text;
+            count = int.Parse(textBox_ItemCount.Text);
+            cost = double.Parse(textBox_ItemCost.Text);
+            id = textBox_ItemID.Text;
         }
     }
 }
