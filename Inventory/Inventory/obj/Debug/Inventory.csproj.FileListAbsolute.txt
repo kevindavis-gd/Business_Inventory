@@ -14,3 +14,4 @@ C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Debug
 C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Debug\Inventory.InventoryView.resources
 C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Debug\Inventory.Form_InsertItem.resources
 C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Debug\Inventory.UpdateForm.resources
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Debug\Inventory.newCompanyForm.resources

@@ -12,7 +12,7 @@ namespace Inventory
 {
     public partial class InventoryView : Form
     {
-        BusinessEntity hardware = new BusinessEntity();
+        BusinessEntity company = new BusinessEntity();
 
         public InventoryView()
         {
@@ -20,13 +20,43 @@ namespace Inventory
         }
         private void InventoryView_Load(object sender, EventArgs e)
         {
-            hardware.ImportFromFile();
-            label_CompanyName.Text = hardware.NameOfBusiness;
+            //company.ImportFromFile();
+            
+            //LoadList();
+        }
+        public void ImportFromFile()
+        {
+            company.ImportFromFile();
             LoadList();
+        }
+        public void FillCompanyDetails()
+        {
+            label_CompanyName.Text = company.NameOfBusiness;
+            this.Name = company.NameOfBusiness;
+            this.Text = company.NameOfBusiness;
+        }
+        public void NewCompany()
+        {
+            
+
+            newCompanyForm newComp = new newCompanyForm();
+            try
+            {
+                if (newComp.ShowDialog(this) == DialogResult.OK && newComp.GetBlank == false)
+                {
+                    company.NameOfBusiness = newComp.GetName;
+                    company.NameOfOwner = newComp.GetOwner;
+                }
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Incorrect Format, Please Try again");
+            }
+            newComp.Dispose();
         }
         public void SaveText()
         {
-            hardware.OutputToFile();
+            company.OutputToFile();
         }
         public void Insert()
         {
@@ -35,7 +65,7 @@ namespace Inventory
             {
                 if (insert.ShowDialog(this) == DialogResult.OK)
                 {
-                    hardware.AddNewItem(insert.GetID, insert.GetName, insert.GetCount, insert.GetCost);
+                    company.AddNewItem(insert.GetID, insert.GetName, insert.GetCount, insert.GetCost);
                 }
             }
             catch (FormatException)
@@ -54,9 +84,9 @@ namespace Inventory
             listBox_Items.Items.Add(String.Format(format, "ID", "Name", "Number Left", "Cost"));
 
             Item temp = new Item();
-            for (int x = 0; x < hardware.NumberOfItems; x++)
+            for (int x = 0; x < company.NumberOfItems; x++)
             {
-                temp = hardware.GetItemInfo(x);
+                temp = company.GetItemInfo(x);
                 listBox_Items.Items.Add(String.Format(format2,temp.ID, temp.Name, temp.Count, temp.Cost));
             }
         }
@@ -64,7 +94,7 @@ namespace Inventory
         public void Delete()
         {
             String str = listBox_Items.SelectedItem.ToString().Substring(0, 4);
-            hardware.DeleteItem(str);
+            company.DeleteItem(str);
             LoadList();
         }
 
@@ -75,7 +105,7 @@ namespace Inventory
             {
                 if (insert.ShowDialog(this) == DialogResult.OK && insert.Getblank == false)
                 {
-                    hardware.Update(listBox_Items.SelectedItem.ToString().Substring(0, 4), insert.GetName, insert.GetCount, insert.GetCost);
+                    company.Update(listBox_Items.SelectedItem.ToString().Substring(0, 4), insert.GetName, insert.GetCount, insert.GetCost);
                 }
             }
             catch (FormatException)

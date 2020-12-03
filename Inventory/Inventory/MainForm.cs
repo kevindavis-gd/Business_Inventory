@@ -52,7 +52,12 @@ namespace Inventory
 
         private void openPlainTextToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NewChild();
+            InventoryView child = new InventoryView();
+            child.MdiParent = this;
+            child.Show();
+            child.ImportFromFile();
+            child.FillCompanyDetails();
+
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -62,15 +67,24 @@ namespace Inventory
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //NewChild();
+            InventoryView child = new InventoryView();
+            child.MdiParent = this;
+            child.Show();
+            child.NewCompany();
+            child.FillCompanyDetails();
         }
-
+/*
         private void NewChild()
         {
             InventoryView child = new InventoryView();
             child.MdiParent = this;
             child.Show();
+            child.ImportFromFile();
+            child.FillCompanyDetails();
+
+
         }
+*/
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
