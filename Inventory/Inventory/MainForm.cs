@@ -91,5 +91,20 @@ namespace Inventory
             InventoryView activeStore = (InventoryView)this.ActiveMdiChild;
             activeStore.ItemUpdate();
         }
+
+        private void saveSerializedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InventoryView activeStore = (InventoryView)this.ActiveMdiChild;
+            activeStore.SaveTexterialized();
+        }
+
+        private void openSerializedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InventoryView child = new InventoryView();
+            child.MdiParent = this;
+            child.Show();
+            child.ImportFromSerializedFile();
+            child.FillCompanyDetails();
+        }
     }
 }

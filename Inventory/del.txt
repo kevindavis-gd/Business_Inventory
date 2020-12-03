@@ -1,0 +1,14 @@
+Machine Shop
+Kevin Davis
+5874
+Saw
+30
+17.28
+7456
+Gloves
+10
+12.95
+6523
+Light Bulbs
+15
+6.75

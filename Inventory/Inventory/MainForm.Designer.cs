@@ -32,7 +32,11 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openPlainTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openSerializedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveSerializedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,10 +44,6 @@
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginPswdUserControl1 = new LoginPswdUserControl.LoginPswdUserControl();
-            this.saveAsTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveSerializedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openPlainTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openSerializedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,6 +87,20 @@
             this.openToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.openToolStripMenuItem.Text = "Open";
             // 
+            // openPlainTextToolStripMenuItem
+            // 
+            this.openPlainTextToolStripMenuItem.Name = "openPlainTextToolStripMenuItem";
+            this.openPlainTextToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.openPlainTextToolStripMenuItem.Text = "Open Plain Text";
+            this.openPlainTextToolStripMenuItem.Click += new System.EventHandler(this.openPlainTextToolStripMenuItem_Click);
+            // 
+            // openSerializedToolStripMenuItem
+            // 
+            this.openSerializedToolStripMenuItem.Name = "openSerializedToolStripMenuItem";
+            this.openSerializedToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.openSerializedToolStripMenuItem.Text = "Open Serialized";
+            this.openSerializedToolStripMenuItem.Click += new System.EventHandler(this.openSerializedToolStripMenuItem_Click);
+            // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -95,6 +109,20 @@
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // saveAsTextToolStripMenuItem
+            // 
+            this.saveAsTextToolStripMenuItem.Name = "saveAsTextToolStripMenuItem";
+            this.saveAsTextToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saveAsTextToolStripMenuItem.Text = "Save As Text";
+            this.saveAsTextToolStripMenuItem.Click += new System.EventHandler(this.saveAsTextToolStripMenuItem_Click);
+            // 
+            // saveSerializedToolStripMenuItem
+            // 
+            this.saveSerializedToolStripMenuItem.Name = "saveSerializedToolStripMenuItem";
+            this.saveSerializedToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saveSerializedToolStripMenuItem.Text = "Save Serialized";
+            this.saveSerializedToolStripMenuItem.Click += new System.EventHandler(this.saveSerializedToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -116,21 +144,21 @@
             // insertToolStripMenuItem
             // 
             this.insertToolStripMenuItem.Name = "insertToolStripMenuItem";
-            this.insertToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.insertToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.insertToolStripMenuItem.Text = "Insert";
             this.insertToolStripMenuItem.Click += new System.EventHandler(this.insertToolStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.updateToolStripMenuItem.Text = "Update";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(141, 26);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -147,32 +175,6 @@
             this.loginPswdUserControl1.Size = new System.Drawing.Size(365, 196);
             this.loginPswdUserControl1.TabIndex = 3;
             this.loginPswdUserControl1.LoginButtonClicked += new System.EventHandler(this.loginPswdUserControl1_LoginButtonClicked);
-            // 
-            // saveAsTextToolStripMenuItem
-            // 
-            this.saveAsTextToolStripMenuItem.Name = "saveAsTextToolStripMenuItem";
-            this.saveAsTextToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.saveAsTextToolStripMenuItem.Text = "Save As Text";
-            this.saveAsTextToolStripMenuItem.Click += new System.EventHandler(this.saveAsTextToolStripMenuItem_Click);
-            // 
-            // saveSerializedToolStripMenuItem
-            // 
-            this.saveSerializedToolStripMenuItem.Name = "saveSerializedToolStripMenuItem";
-            this.saveSerializedToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.saveSerializedToolStripMenuItem.Text = "Save Serialized";
-            // 
-            // openPlainTextToolStripMenuItem
-            // 
-            this.openPlainTextToolStripMenuItem.Name = "openPlainTextToolStripMenuItem";
-            this.openPlainTextToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.openPlainTextToolStripMenuItem.Text = "Open Plain Text";
-            this.openPlainTextToolStripMenuItem.Click += new System.EventHandler(this.openPlainTextToolStripMenuItem_Click);
-            // 
-            // openSerializedToolStripMenuItem
-            // 
-            this.openSerializedToolStripMenuItem.Name = "openSerializedToolStripMenuItem";
-            this.openSerializedToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.openSerializedToolStripMenuItem.Text = "Open Serialized";
             // 
             // MainForm
             // 

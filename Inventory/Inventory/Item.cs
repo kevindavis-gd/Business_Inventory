@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inventory
 {
+    [Serializable]
     class Item
     {
         private double cost;

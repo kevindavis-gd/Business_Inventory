@@ -29,6 +29,11 @@ namespace Inventory
             company.ImportFromFile();
             LoadList();
         }
+        public void ImportFromSerializedFile()
+        {
+            company.ImportFromSearilizedFile();
+            LoadList();
+        }
         public void FillCompanyDetails()
         {
             label_CompanyName.Text = company.NameOfBusiness;
@@ -57,6 +62,10 @@ namespace Inventory
         public void SaveText()
         {
             company.OutputToFile();
+        }
+        public void SaveTexterialized()
+        {
+            company.SerializedOutputToFile();
         }
         public void Insert()
         {

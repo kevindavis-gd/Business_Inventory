@@ -6,9 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 namespace Inventory
 {
+    [Serializable]
     class BusinessEntity
     {
         private string nameOfBusiness;
@@ -66,6 +69,37 @@ namespace Inventory
             }//if 
         }
 
+        public void ImportFromSearilizedFile()
+        {
+            BinaryFormatter reader = new BinaryFormatter();
+            OpenFileDialog fileChooser = new OpenFileDialog();
+            fileChooser.Filter = "Text |* .txt";
+            if (fileChooser.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                try
+                {
+                    //StreamReader file = new StreamReader(fileChooser.FileName);
+                    FileStream file = new FileStream(fileChooser.FileName, FileMode.Open, FileAccess.Read);
+
+                    BusinessEntity tempBis = (BusinessEntity)reader.Deserialize(file);
+                    NameOfBusiness = tempBis.nameOfBusiness;
+                    nameOfOwner = tempBis.nameOfOwner;
+
+                    while (file.Position != file.Length)
+                    {
+                        Item tempItem = (Item)reader.Deserialize(file);
+                        inventoryItems.Add(tempItem);
+                    }
+
+                    file.Close();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }//if 
+        }
+
         public void OutputToFile()
         {
             SaveFileDialog outfile = new SaveFileDialog();
@@ -82,6 +116,34 @@ namespace Inventory
                         output.WriteLine(item.Name);
                         output.WriteLine(item.Count);
                         output.WriteLine(item.Cost);
+                    }
+                }
+            }
+        }
+        public void SerializedOutputToFile()
+        {
+
+            SaveFileDialog outfile = new SaveFileDialog();
+            
+
+            if (outfile.ShowDialog() == DialogResult.OK)
+            {
+                //serializes Record in binary formatprivate 
+                BinaryFormatter formatter = new BinaryFormatter();
+                // allow user to create 
+                outfile.CheckFileExists = false;
+
+                FileStream stream = new FileStream(outfile.FileName, FileMode.OpenOrCreate, FileAccess.Write);
+                // using (StreamWriter output = new StreamWriter(s))
+                {
+                    BusinessEntity tempBis = new BusinessEntity();
+                    tempBis.nameOfBusiness = nameOfBusiness;
+                    tempBis.nameOfOwner = nameOfOwner;
+                    formatter.Serialize(stream, tempBis);
+
+                    foreach (Item item in inventoryItems)
+                    {
+                        formatter.Serialize(stream, item);
                     }
                 }
             }
