@@ -1,17 +1,22 @@
 Machine Shop
 Kevin Davis
+e
 Hammer
 25
 19.75
+e
 Saw
 30
 17.28
+e
 Nail
 30
 0.15
+e
 Gloves
 10
 12.95
+e
 Light Bulbs
 15
 6.75

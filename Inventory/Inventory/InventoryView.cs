@@ -39,7 +39,7 @@ namespace Inventory
                 
                 if (insert.ShowDialog(this) == DialogResult.OK)
                 {
-                    hardware.AddNewItem(insert.GetName, insert.GetCount, insert.GetCost);
+                    hardware.AddNewItem(insert.GetID, insert.GetName, insert.GetCount, insert.GetCost);
                 }
             }
             catch (FormatException)
@@ -52,17 +52,17 @@ namespace Inventory
 
         private void LoadList()
         {
-            string format = "{0,-20}{1,20}{2,20}";
-            string format2 = "{0,-20}{1,20}{2,20:C}";
+            string format = "{0,-10}{1,-10}{2,-20}{3,-10}";
+            string format2 = "{0,-10}{1,-10}{2,-20}{3,-10:C}";
 
             listBox_Items.Items.Clear();
-            listBox_Items.Items.Add(String.Format(format, "Name", "Number Left", "Cost"));
+            listBox_Items.Items.Add(String.Format(format, "ID", "Name", "Number Left", "Cost"));
 
             Item temp = new Item();
             for (int x = 0; x < hardware.NumberOfItems; x++)
             {
                 temp = hardware.GetItemInfo(x);
-                listBox_Items.Items.Add(String.Format(format2, temp.Name, temp.Count, temp.Cost));
+                listBox_Items.Items.Add(String.Format(format2,temp.ID, temp.Name, temp.Count, temp.Cost));
             }
         }
     }
