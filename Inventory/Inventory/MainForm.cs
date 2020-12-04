@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Inventory
@@ -29,6 +21,10 @@ namespace Inventory
             {
                 MainMenuStrip.Show();
                 loginPswdUserControl1.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Incorrect Username Or Password");
             }
         }
 
@@ -73,18 +69,18 @@ namespace Inventory
             child.NewCompany();
             child.FillCompanyDetails();
         }
-/*
-        private void NewChild()
-        {
-            InventoryView child = new InventoryView();
-            child.MdiParent = this;
-            child.Show();
-            child.ImportFromFile();
-            child.FillCompanyDetails();
+        /*
+                private void NewChild()
+                {
+                    InventoryView child = new InventoryView();
+                    child.MdiParent = this;
+                    child.Show();
+                    child.ImportFromFile();
+                    child.FillCompanyDetails();
 
 
-        }
-*/
+                }
+        */
 
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -105,6 +101,20 @@ namespace Inventory
             child.Show();
             child.ImportFromSerializedFile();
             child.FillCompanyDetails();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void infoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+               " This Program keeps an inventory of the items within multiple stores, \n" +
+               " how many of each item are currently in stock, and the cost of each. \n" +
+               " It also allows the user to Insert, Update, Deletem and Display items",
+               "About This Program");
         }
     }
 }

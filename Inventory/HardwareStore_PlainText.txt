@@ -1,0 +1,42 @@
+Kevins Hardware
+Kevin Davis
+0001
+Hammer
+25
+19.75
+0002
+Saw
+30
+17.28
+0003
+Nail
+30
+0.15
+0004
+Gloves
+10
+12.95
+0005
+Light Bulb
+15
+6.75
+0006
+Drill
+27
+15.75
+0007
+Spade
+17
+12.75
+0008
+Screw
+93
+0.30
+0009
+Wire
+56
+23.30
+0010
+Tubing
+54
+15.30

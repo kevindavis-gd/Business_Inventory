@@ -1,0 +1,30 @@
+Kevins Books
+Kevin Davis
+1001
+Math Book
+25
+19.75
+1002
+English Book
+30
+17.28
+1003
+Pencil
+30
+1.15
+1004
+Pen
+10
+3.95
+1005
+Eraser
+15
+0.75
+1006
+Note Book
+27
+2.75
+1007
+Sharpener
+17
+0.75

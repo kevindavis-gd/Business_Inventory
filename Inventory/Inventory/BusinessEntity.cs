@@ -19,8 +19,6 @@ namespace Inventory
         private int numberOfItems;
         public List<Item> inventoryItems = new List<Item>();
 
-       
-
         public int NumberOfItems
         {
             get { numberOfItems = inventoryItems.Count; return numberOfItems; }
@@ -57,7 +55,6 @@ namespace Inventory
 
                     while (!file.EndOfStream)
                     {
-                        //AddItem(new Item(file.ReadLine().Substring(0, 4), file.ReadLine(), int.Parse(file.ReadLine()), Double.Parse(file.ReadLine())));
                         AddNewItem(file.ReadLine().Substring(0, 4), file.ReadLine(), int.Parse(file.ReadLine()), Double.Parse(file.ReadLine()));
                     }
                     file.Close();

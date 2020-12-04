@@ -5,13 +5,17 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Inventory
 {
+    
     public partial class InventoryView : Form
     {
+        int previousIndex = 1;
+
         BusinessEntity company = new BusinessEntity();
 
         public InventoryView()
@@ -86,19 +90,42 @@ namespace Inventory
         }
         private void LoadList()
         {
-            string format = "{0,-10}{1,-10}{2,-20}{3,-10}";
-            string format2 = "{0,-10}{1,-10}{2,-20}{3,-10:C}";
 
             listBox_Items.Items.Clear();
-            listBox_Items.Items.Add(String.Format(format, "ID", "Name", "Number Left", "Cost"));
+            int columnWidth = 12;
+            int headingWidth = 15;
+
+            listBox_Items.Items.Add(
+               $" {" ID".PadRight(headingWidth)} \t" +
+               $" {"Name".PadRight(headingWidth)} \t" +
+               $" {"Count".PadRight(headingWidth)} \t" +
+               $" {"Cost".PadRight(headingWidth)} \t");
 
             Item temp = new Item();
-            for (int x = 0; x < company.NumberOfItems; x++)
+            for (int x = 0; x < company.NumberOfItems - 1; x++)
             {
                 temp = company.GetItemInfo(x);
-                listBox_Items.Items.Add(String.Format(format2,temp.ID, temp.Name, temp.Count, temp.Cost));
+                listBox_Items.Items.Add(
+                   $" {temp.ID.PadRight(columnWidth)} \t" +
+                   $" {temp.Name.PadRight(columnWidth)} \t" +
+                   $" {temp.Count.ToString().PadRight(columnWidth)} \t" +
+                   $" {"$"+ temp.Cost.ToString().PadRight(columnWidth)} \t");
             }
         }
+
+        private void listBox_Items_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (listBox_Items.SelectedIndex == 0)
+            {
+                listBox_Items.SelectedIndex = previousIndex;
+            }
+            else
+            {
+                previousIndex = listBox_Items.SelectedIndex;
+            }
+        }
+
 
         public void Delete()
         {
@@ -124,6 +151,8 @@ namespace Inventory
             insert.Dispose();
             LoadList();
         }
+
+       
     }
 
 }
