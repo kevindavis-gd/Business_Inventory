@@ -43,8 +43,8 @@
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loginPswdUserControl1 = new LoginPswdUserControl.LoginPswdUserControl();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loginPswdUserControl1 = new LoginPswdUserControl.LoginPswdUserControl();
             this.MainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -170,7 +170,13 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // infoToolStripMenuItem
+            // 
+            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.infoToolStripMenuItem.Text = "Info";
+            this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
             // loginPswdUserControl1
             // 
@@ -179,13 +185,6 @@
             this.loginPswdUserControl1.Size = new System.Drawing.Size(365, 196);
             this.loginPswdUserControl1.TabIndex = 3;
             this.loginPswdUserControl1.LoginButtonClicked += new System.EventHandler(this.loginPswdUserControl1_LoginButtonClicked);
-            // 
-            // infoToolStripMenuItem
-            // 
-            this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.infoToolStripMenuItem.Text = "Info";
-            this.infoToolStripMenuItem.Click += new System.EventHandler(this.infoToolStripMenuItem_Click);
             // 
             // MainForm
             // 

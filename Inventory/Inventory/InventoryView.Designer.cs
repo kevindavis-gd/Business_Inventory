@@ -32,6 +32,7 @@
             this.listBox_Items = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.checkBox_Sort = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +61,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.checkBox_Sort);
             this.panel1.Controls.Add(this.label_CompanyName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -76,6 +78,17 @@
             this.panel2.Size = new System.Drawing.Size(520, 328);
             this.panel2.TabIndex = 3;
             // 
+            // checkBox_Sort
+            // 
+            this.checkBox_Sort.AutoSize = true;
+            this.checkBox_Sort.Location = new System.Drawing.Point(427, 68);
+            this.checkBox_Sort.Name = "checkBox_Sort";
+            this.checkBox_Sort.Size = new System.Drawing.Size(56, 21);
+            this.checkBox_Sort.TabIndex = 1;
+            this.checkBox_Sort.Text = "Sort";
+            this.checkBox_Sort.UseVisualStyleBackColor = true;
+            this.checkBox_Sort.CheckedChanged += new System.EventHandler(this.checkBox_Sort_CheckedChanged);
+            // 
             // InventoryView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -85,7 +98,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "InventoryView";
             this.Text = "InventoryView";
-            this.Load += new System.EventHandler(this.InventoryView_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -99,5 +111,6 @@
         public System.Windows.Forms.ListBox listBox_Items;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.CheckBox checkBox_Sort;
     }
 }

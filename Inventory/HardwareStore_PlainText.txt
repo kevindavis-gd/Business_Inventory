@@ -21,7 +21,7 @@ Light Bulb
 15
 6.75
 0006
-Drill
+Power Drill
 27
 15.75
 0007

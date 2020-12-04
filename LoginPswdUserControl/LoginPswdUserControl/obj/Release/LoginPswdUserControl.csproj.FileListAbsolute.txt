@@ -5,3 +5,4 @@ C:\Users\shylo\Documents\GitHub\Business_Inventory\LoginPswdUserControl\LoginPsw
 C:\Users\shylo\Documents\GitHub\Business_Inventory\LoginPswdUserControl\LoginPswdUserControl\obj\Release\LoginPswdUserControl.csproj.CoreCompileInputs.cache
 C:\Users\shylo\Documents\GitHub\Business_Inventory\LoginPswdUserControl\LoginPswdUserControl\obj\Release\LoginPswdUserControl.dll
 C:\Users\shylo\Documents\GitHub\Business_Inventory\LoginPswdUserControl\LoginPswdUserControl\obj\Release\LoginPswdUserControl.pdb
+C:\Users\shylo\Documents\GitHub\Business_Inventory\LoginPswdUserControl\LoginPswdUserControl\obj\Release\LoginPswdUserControl.csprojAssemblyReference.cache

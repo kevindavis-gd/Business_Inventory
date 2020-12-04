@@ -1,9 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Name: Kevin Davis 
+// Class : CMPS4143
+// Assignment: Program 7
+// Date: 12/04/2020
+//
+// Description :
+// This Program keeps an inventory of the items within multiple stores,
+// how many of each item are currently in stock, and the cost of each. 
+// It also allows the user to Insert, Update, Deletem and Display items.
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+using System;
 namespace Inventory
 {
     [Serializable]
@@ -19,32 +25,42 @@ namespace Inventory
             get { return id; }
             set { id = value; }
         }
-
-
         public int Count
         {
             get { return count; }
             set { count = value; }
         }
-
         public string Name
         {
             get { return name; }
             set { name = value; }
         }
-
         public double Cost
         {
             get { return cost; }
             set { cost = value; }
         }
-
+        ////////////////////////////////////////////////////////////////////////////////////////// Default Constructor
+        // Name: Item
+        // Arguments :
+        //
+        // Description :
+        // 
+        //////////////////////////////////////////////////////////////////////////////////////////
         public Item()
         {
+            id = "";
             name = "";
             count = 0;
             cost = 0;
         }
+        ////////////////////////////////////////////////////////////////////////////////////////// Parameterized Constructor
+        // Name: Item
+        // Arguments :
+        //
+        // Description :
+        // 
+        //////////////////////////////////////////////////////////////////////////////////////////
         public Item(string i,string nam, int cou, double cos)
         {
             id = i;
@@ -53,6 +69,14 @@ namespace Inventory
             cost = cos;
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////// Copy
+        // Name: Copy
+        // Arguments :
+        //
+        // Description :
+        // Copy itself to a new Item Object, then returns that object
+        // 
+        //////////////////////////////////////////////////////////////////////////////////////////
         public Item Copy ()
         {
             Item copy = new Item();
