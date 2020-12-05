@@ -1,0 +1,16 @@
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\bin\Release\Inventory.exe.config
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\bin\Release\Inventory.exe
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\bin\Release\Inventory.pdb
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\bin\Release\LoginPswdUserControl.dll
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\bin\Release\LoginPswdUserControl.pdb
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Release\Inventory.newCompanyForm.resources
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Release\Inventory.UpdateForm.resources
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Release\Inventory.Form_InsertItem.resources
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Release\Inventory.InventoryView.resources
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Release\Inventory.MainForm.resources
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Release\Inventory.Properties.Resources.resources
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Release\Inventory.csproj.GenerateResource.cache
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Release\Inventory.csproj.CoreCompileInputs.cache
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Release\Inventory.csproj.CopyComplete
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Release\Inventory.exe
+C:\Users\shylo\Documents\GitHub\Business_Inventory\Inventory\Inventory\obj\Release\Inventory.pdb

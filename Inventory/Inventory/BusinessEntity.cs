@@ -132,19 +132,22 @@ namespace Inventory
             if (outfile.ShowDialog() == DialogResult.OK)
             {
                 using (Stream s = File.Open(outfile.FileName, FileMode.Create))
-                using (StreamWriter output = new StreamWriter(s))
                 {
-                    // first two lines to output to file
-                    output.WriteLine(NameOfBusiness);
-                    output.WriteLine(NameOfOwner);
-                    foreach(var item in inventoryItems)
+                    using (StreamWriter output = new StreamWriter(s))
                     {
-                        //these lines are written in groups of 4
-                        output.WriteLine(item.ID);
-                        output.WriteLine(item.Name);
-                        output.WriteLine(item.Count);
-                        output.WriteLine(item.Cost);
+                        // first two lines to output to file
+                        output.WriteLine(NameOfBusiness);
+                        output.WriteLine(NameOfOwner);
+                        foreach (var item in inventoryItems)
+                        {
+                            //these lines are written in groups of 4
+                            output.WriteLine(item.ID);
+                            output.WriteLine(item.Name);
+                            output.WriteLine(item.Count);
+                            output.WriteLine(item.Cost);
+                        }
                     }
+                    s.Close();
                 }
             }
         }
@@ -165,10 +168,10 @@ namespace Inventory
             {
                 //serializes Record in binary format private 
                 BinaryFormatter formatter = new BinaryFormatter();
-                // allow user to create 
                 outfile.CheckFileExists = false;
                 FileStream stream = new FileStream(outfile.FileName, FileMode.OpenOrCreate, FileAccess.Write);
                 {
+                    
                     //create a new business object 
                     BusinessEntity tempBis = new BusinessEntity();
                     //store the name of owner and name of business in that object
@@ -182,6 +185,7 @@ namespace Inventory
                         formatter.Serialize(stream, item);
                     }
                 }
+                stream.Close();
             }
         }
         ////////////////////////////////////////////////////////////////////////////////////////// Get Item Info
@@ -266,7 +270,6 @@ namespace Inventory
         {
             for (int x = 0; x < inventoryItems.Count; x++)
             {
-                MessageBox.Show(id);
                 if (inventoryItems[x].ID == id)
                 {
                     inventoryItems[x].Name = name;

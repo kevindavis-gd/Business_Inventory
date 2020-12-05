@@ -96,6 +96,10 @@ namespace Inventory
                     company.NameOfBusiness = newComp.GetName;
                     company.NameOfOwner = newComp.GetOwner;
                 }
+                else
+                {
+                    this.Close();
+                }
             }
             catch (FormatException)
             {
@@ -103,8 +107,6 @@ namespace Inventory
             }
             newComp.Dispose();
         }
-        
-        
         ////////////////////////////////////////////////////////////////////////////////////////// Load List
         // Name: LoadList
         // Arguments : None
@@ -117,8 +119,9 @@ namespace Inventory
         private void LoadList()
         {
             listBox_Items.Items.Clear();
-            int columnWidth = 12;
+            int columnWidth = 27;
             int headingWidth = 15;
+            int col1, col2, col3, col4;
 
             listBox_Items.Items.Add(
                $" {" ID".PadRight(headingWidth)} \t" +
@@ -130,11 +133,15 @@ namespace Inventory
             for (int x = 0; x < company.NumberOfItems; x++)
             {
                 temp = company.GetItemInfo(x);
+                col1 = temp.ID.Length;
+                col2 = temp.Name.Length;
+                col3 = temp.Count.ToString().Length;
+                col4 = temp.Cost.ToString().Length;
                 listBox_Items.Items.Add(
-                   $" {temp.ID.PadRight(columnWidth)} \t" +
-                   $" {temp.Name.PadRight(columnWidth)} \t" +
-                   $" {temp.Count.ToString().PadRight(columnWidth)} \t" +
-                   $" {"$" + temp.Cost.ToString().PadRight(columnWidth)} \t");
+                   $" {temp.ID.PadRight(columnWidth - col1)} \t" +
+                   $" {temp.Name.PadRight(columnWidth - col2)} \t" +
+                   $" {temp.Count.ToString().PadRight(columnWidth - col3)} \t" +
+                   $" {"$" + temp.Cost.ToString().PadRight(columnWidth - col4)} \t");
             }
             //prevents the heading from being automatically selected when the window opens
             listBox_Items.SelectedIndex = 1;

@@ -58,7 +58,7 @@ namespace Inventory
             }
             else
             {
-                MessageBox.Show("Incorrect Username Or Password", "Incorrect");
+                MessageBox.Show("Incorrect Username Or Password, Try User: admin, Pass: admin", "Incorrect");
             }
         }
         ////////////////////////////////////////////////////////////////////////////////////////// Open Plain Text
@@ -179,7 +179,15 @@ namespace Inventory
         private void insertToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InventoryView activeStore = (InventoryView)this.ActiveMdiChild;
-            activeStore.Insert();
+            if (activeStore != null)
+            {
+                activeStore.Insert();
+            }
+            else
+            {
+                MessageBox.Show("Please Open or Create a Business", "Error");
+            }
+            
         }
         ////////////////////////////////////////////////////////////////////////////////////////// Update Item
         // Name: updateToolStripMenuItem_Click
@@ -192,7 +200,14 @@ namespace Inventory
         private void updateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InventoryView activeStore = (InventoryView)this.ActiveMdiChild;
-            activeStore.ItemUpdate();
+            if (activeStore != null)
+            {
+                activeStore.ItemUpdate();
+            }
+            else
+            {
+                MessageBox.Show("Please Open or Create a Business", "Error");
+            }
         }
         ////////////////////////////////////////////////////////////////////////////////////////// Delete Item
         // Name: deleteToolStripMenuItem_Click
@@ -205,7 +220,14 @@ namespace Inventory
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InventoryView activeStore = (InventoryView)this.ActiveMdiChild;
-            activeStore.Delete();
+            if (activeStore != null)
+            {
+                activeStore.Delete();
+            }
+            else
+            {
+                MessageBox.Show("Please Open or Create a Business", "Error");
+            }
         }
         ////////////////////////////////////////////////////////////////////////////////////////// About Info
         // Name: infoToolStripMenuItem_Click
